@@ -67,6 +67,8 @@ func Run(ctx context.Context, configFilePath string, hostDNSServer DNSServer,
 
 	// TODO: pass in an iowriter/ use log library
 	WriteLog(fmt.Sprintf("read config %v", config))
+	
+	WriteLog(fmt.Sprintf("\n"))
 
 	WriteLog(fmt.Sprintf("%s %s", StepSecurityLogCorrelationPrefix, config.CorrelationId))
 
