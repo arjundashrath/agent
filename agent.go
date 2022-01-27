@@ -129,6 +129,7 @@ func Run(ctx context.Context, configFilePath string, hostDNSServer DNSServer,
 		return err
 	}
 
+	WriteLog("\n")
 	WriteLog("updated resolved")
 
 	// Change DNS for docker, causes process in containers to use agent's DNS proxy
