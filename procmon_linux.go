@@ -103,7 +103,7 @@ func (p *ProcessMonitor) MonitorProcesses(errc chan error) {
 		errc <- errors.Wrap(err, "failed to set audit PID")
 	}
 
-	WriteLog("receive called")
+	WriteLog("receive called\n")
 
 	p.receive(client)
 }
