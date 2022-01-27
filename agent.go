@@ -71,6 +71,8 @@ func Run(ctx context.Context, configFilePath string, hostDNSServer DNSServer,
 	WriteLog(fmt.Sprintf("\n"))
 
 	WriteLog(fmt.Sprintf("%s %s", StepSecurityLogCorrelationPrefix, config.CorrelationId))
+	
+	WriteLog(fmt.Sprintf("\n"))
 
 	Cache := InitCache(config.EgressPolicy)
 
