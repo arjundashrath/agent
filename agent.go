@@ -211,6 +211,7 @@ func refreshDNSEntries(ctx context.Context, iptables *Firewall, allowedEndpoints
 			case <-ctx.Done():
 				return
 			case <-ticker.C:
+				WriteLog("\n")
 				WriteLog("Refreshing DNS entries")
 				for domainName, endpoints := range allowedEndpoints {
 					element, found := dnsProxy.Cache.Get(domainName)
