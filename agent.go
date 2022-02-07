@@ -136,7 +136,8 @@ func Run(ctx context.Context, configFilePath string, hostDNSServer DNSServer,
 		return err
 	}
 
-	WriteLog("set docker config")
+	WriteLog("\n")
+	WriteLog("set docker config\n")
 
 	if config.EgressPolicy == EgressPolicyAudit {
 		netMonitor := NetworkMonitor{
@@ -161,7 +162,9 @@ func Run(ctx context.Context, configFilePath string, hostDNSServer DNSServer,
 		WriteLog("added audit rules")
 	} else if config.EgressPolicy == EgressPolicyBlock {
 
+		WriteLog("\n")
 		WriteLog(fmt.Sprintf("Allowed domains:%v", config.Endpoints))
+		WriteLog("\n")
 
 		netMonitor := NetworkMonitor{
 			CorrelationId: config.CorrelationId,
