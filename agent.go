@@ -66,9 +66,11 @@ func Run(ctx context.Context, configFilePath string, hostDNSServer DNSServer,
 	apiclient := &ApiClient{Client: &http.Client{}, APIURL: config.APIURL}
 
 	// TODO: pass in an iowriter/ use log library
-	WriteLog(fmt.Sprintf("read config %v", config))
+	WriteLog(fmt.Sprintf("read config \n %v", config))
+	WriteLog("\n")
 
 	WriteLog(fmt.Sprintf("%s %s", StepSecurityLogCorrelationPrefix, config.CorrelationId))
+	WriteLog("\n")
 
 	Cache := InitCache(config.EgressPolicy)
 
