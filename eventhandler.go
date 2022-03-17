@@ -118,6 +118,7 @@ func (eventHandler *EventHandler) handleProcessEvent(event *Event) {
 
 	if !found {
 		eventHandler.ProcessMap[event.Pid] = &Process{PID: event.Pid, PPid: event.PPid, Exe: event.Exe, Arguments: event.ProcessArguments}
+		WriteLog(event.ProcessArguments)
 	}
 
 	eventHandler.procMutex.Unlock()
